@@ -1,0 +1,14 @@
+{# TODO - NEXT-20791 : remove store-key property. Filters should not be stored somewhere #}
+<sw-entity-advanced-selection-modal
+    entity-name="property_group_option"
+    :entity-display-text="$tc('global.sw-entity-advanced-selection-modal.entity.property_group_option')"
+    store-key="advancedSelection.property_group_option"
+    :entity-context="propertyContext"
+    :entity-columns="propertyColumns"
+    :entity-filters="propertyFilters"
+    :entity-associations="propertyAssociations"
+    empty-image-path="/administration/static/img/empty-states/products-empty-state.svg"
+    v-bind="$attrs"
+    @selection-submit="$emit('selection-submit', $event)"
+    @modal-close="$emit('modal-close', $event)"
+></sw-entity-advanced-selection-modal>

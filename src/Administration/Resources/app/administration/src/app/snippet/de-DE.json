@@ -550,7 +550,8 @@
       "applySelection": "Auswahl anwenden",
       "entity": {
         "product": "Produkte",
-        "rule": "Regeln"
+        "rule": "Regeln",
+        "property_group_option": "Eigenschaften"
       }
     },
     "sw-entity-multi-select": {
