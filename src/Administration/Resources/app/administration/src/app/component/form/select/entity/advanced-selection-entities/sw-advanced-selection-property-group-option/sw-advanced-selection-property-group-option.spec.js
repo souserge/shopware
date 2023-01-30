@@ -23,20 +23,20 @@ async function createWrapper() {
             localVue,
             provide: {
                 acl: {
-                    can: () => true
+                    can: () => true,
                 },
                 filterFactory: {
-                    create: () => []
+                    create: () => [],
                 },
                 filterService: {
                     getStoredCriteria: () => {
                         return Promise.resolve([]);
                     },
-                    mergeWithStoredFilters: (storeKey, criteria) => criteria
+                    mergeWithStoredFilters: (storeKey, criteria) => criteria,
                 },
                 shortcutService: {
                     startEventListener() {},
-                    stopEventListener() {}
+                    stopEventListener() {},
                 },
                 numberRangeService: {},
                 repositoryFactory: {
@@ -52,7 +52,7 @@ async function createWrapper() {
                     },
                     buildSearchQueriesForEntity: (searchFields, term, criteria) => {
                         return criteria;
-                    }
+                    },
                 },
             },
             stubs: {
@@ -62,67 +62,67 @@ async function createWrapper() {
                 'sw-card': await Shopware.Component.build('sw-card'),
                 'sw-card-filter': await Shopware.Component.build('sw-card-filter'),
                 'sw-simple-search-field': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-context-button': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-context-menu-item': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-data-grid-settings': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-empty-state': {
-                    template: '<div class="sw-empty-state"></div>'
+                    template: '<div class="sw-empty-state"></div>',
                 },
                 'sw-pagination': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-icon': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'router-link': true,
                 'sw-button': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-sidebar': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-sidebar-item': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-language-switch': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-notification-center': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-search-bar': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-loader': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-data-grid-skeleton': {
-                    template: '<div class="sw-data-grid-skeleton"></div>'
+                    template: '<div class="sw-data-grid-skeleton"></div>',
                 },
                 'sw-checkbox-field': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-media-preview-v2': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-color-badge': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-extension-component-section': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
                 'sw-ignore-class': {
-                    template: '<div></div>'
+                    template: '<div></div>',
                 },
-            }
+            },
         }),
     };
 }
