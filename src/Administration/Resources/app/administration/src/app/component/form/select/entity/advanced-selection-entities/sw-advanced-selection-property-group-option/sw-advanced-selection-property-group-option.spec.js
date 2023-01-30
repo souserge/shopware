@@ -40,7 +40,7 @@ async function createWrapper() {
                 },
                 numberRangeService: {},
                 repositoryFactory: {
-                    create: (name) => {
+                    create: () => {
                         return { search: () => Promise.resolve([]) };
                     }
                 },

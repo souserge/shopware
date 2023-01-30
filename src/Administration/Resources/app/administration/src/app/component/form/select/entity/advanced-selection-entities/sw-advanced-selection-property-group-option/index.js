@@ -1,7 +1,6 @@
 import template from './sw-advanced-selection-property-group-option.html.twig';
 
 const { Component } = Shopware;
-const { Criteria } = Shopware.Data;
 
 /**
  * @private
