@@ -58,9 +58,8 @@ github sync:
       - .gitlab/bin/git_sync.bash origin github
 
 .push split repositories:
+  extends: .base-no-setup
   stage: deploy
-  tags:
-    - shopware
   image:
     name: bitnami/git:2
   needs:
