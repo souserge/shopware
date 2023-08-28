@@ -59,3 +59,6 @@ Reduce worker count
 ```
 npx playwright test --workers 4
 ```
+
+## Best Practices
+
