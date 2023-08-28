@@ -65,7 +65,7 @@ export const test = base.extend<TestFixtures, WorkerFixtures>({
 
         await use({ addCleanup });
 
-        // iterate in reverse order to cleanup in the correct order
+        // iterate in reverse order to clean up in the correct order
         for (let i = cleanupList.length - 1; i >= 0; i--) {
             await cleanupList[i]();
         }

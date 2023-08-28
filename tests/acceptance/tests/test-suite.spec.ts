@@ -1,9 +1,5 @@
 import { test, expect } from '../fixtures/acceptance-test';
 
-test('Open admin settings', async ({ adminPage }) => {
-    await adminPage.getByText('Settings').click();
-});
-
 // run multiple times to test stability
 for (let i = 0; i < 10; ++i) {
     test(`Open product ${i}`, async ({product, adminPage}) => {

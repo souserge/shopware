@@ -8,7 +8,7 @@ const env = require('dotenv').config({
 
 const missingEnvVars = ['APP_URL', 'SHOPWARE_ACCESS_KEY_ID', 'SHOPWARE_SECRET_ACCESS_KEY'].filter((envVar) => {
     return process.env[envVar] === undefined;
-})
+});
 
 if (missingEnvVars.length > 0) {
     const envPath = path.resolve('.env');
@@ -107,7 +107,7 @@ export default defineConfig({
         })(),
 
         /**
-         * Uncomment other brothers after prototype!
+         * Uncomment other browsers after prototype!
          */
         // {
         //   name: 'firefox',
