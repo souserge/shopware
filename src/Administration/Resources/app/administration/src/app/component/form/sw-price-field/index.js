@@ -242,6 +242,10 @@ Component.register('sw-price-field', {
         netFieldName() {
             return this.name ? `${this.name}-net` : 'sw-price-field-net';
         },
+
+        eventToUse() {
+            return this.feature.isActive('VUE3') ? 'change' : 'priceChange';
+        },
     },
 
     watch: {
