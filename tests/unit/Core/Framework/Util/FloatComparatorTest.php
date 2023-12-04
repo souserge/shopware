@@ -3,6 +3,8 @@
 namespace Shopware\Tests\Unit\Core\Framework\Util;
 
 use PHPUnit\Framework\TestCase;
+use Shopware\Core\Framework\Rule\Exception\UnsupportedOperatorException;
+use Shopware\Core\Framework\Rule\Rule;
 use Shopware\Core\Framework\Util\FloatComparator;
 
 /**
@@ -12,6 +14,36 @@ use Shopware\Core\Framework\Util\FloatComparator;
  */
 class FloatComparatorTest extends TestCase
 {
+    /**
+     * @dataProvider floatMatchDataProvider
+     */
+    public function testFloatMatch(string $operator, float $a, float $b, bool $expected): void
+    {
+        static::assertSame($expected, FloatComparator::floatMatch($operator, $a, $b));
+    }
+
+    public function testFloatMatchThrowException(): void
+    {
+        static::expectException(UnsupportedOperatorException::class);
+
+        FloatComparator::floatMatch('empty', 1, 2);
+    }
+
+    /**
+     * @return array{0: string, 1: float, 2: float, 3:bool}[]
+     */
+    public static function floatMatchDataProvider(): array
+    {
+        return [
+            [Rule::OPERATOR_NEQ, 1, 2, true],
+            [Rule::OPERATOR_GTE, 1, 1, true],
+            [Rule::OPERATOR_LTE, 1, 1, true],
+            [Rule::OPERATOR_EQ, 1, 2, false],
+            [Rule::OPERATOR_GT, 1, 2, false],
+            [Rule::OPERATOR_LT, 1, 2, true],
+        ];
+    }
+
     /**
      * @dataProvider equalsDataProvider
      */
