@@ -22,7 +22,8 @@ Shopware Install (onPrem):
     - cp ../.gitlab/composer-on-prem-install.json composer.json
     - composer install
     - ./bin/console system:install --basic-setup --create-database
-    - ./bin/console framework:demodata -e prod
+    #- ./bin/console framework:demodata -e prod
     - ./bin/console dal:refresh:index
+    - sed -ri 's/^(<\?php)/\1\nerror_reporting\(E_ALL\)\;/g' ./bin/ci
     - ./bin/build-administration.sh
     - ./bin/build-storefront.sh
