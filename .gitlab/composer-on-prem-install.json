@@ -63,6 +63,7 @@
     "symfony": {
       "allow-contrib": true,
       "endpoint": [
+        "https://raw.githubusercontent.com/shopware/recipes/flex/pull-73/index.json",
         "https://raw.githubusercontent.com/shopware/recipes/flex/main/index.json",
         "flex://defaults"
       ]
