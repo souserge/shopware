@@ -86,7 +86,7 @@ class ProductReviewSaveRoute extends AbstractProductReviewSaveRoute
             'externalUser' => $data->get('name'),
             'externalEmail' => $data->get('email'),
             'title' => $data->get('title'),
-            'content' => $data->get('content'),
+            'content' => preg_replace('/<[^>]*>/', '', $data->get('content')),
             'points' => $data->get('points'),
             'status' => false,
         ];
