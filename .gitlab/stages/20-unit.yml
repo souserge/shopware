@@ -252,6 +252,12 @@ PHP Full:
         - !reference [.rules, run]
         - if: !reference [.rules, long-running-allow-failure, if]
           allow_failure: true
+          changes:
+            - phpunit.xml.dist
+            - '**/Resources/views/*.html.twig'
+            - '**/*.{php,xml,yaml,json,js,twig}'
+            - 'adr/*'
+            - .gitlab/stages/02-unit.yml
         # run if it's merge train and has changes or scheduled
         - if: !reference [.rules, long-running, if]
           changes:
